@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, StyleSheet,TextInput,TouchableOpacity ,Image} from 'react-native';
 import Constants from 'expo-constants';
 import AntDesign from '@expo/vector-icons/AntDesign';
-const SignUp=()=> {
+const SignUp=({navigation})=> {
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, }}>
@@ -21,7 +21,8 @@ const SignUp=()=> {
      <TextInput style={styles.inp2} placeholder='Maryam' />
       <TextInput style={styles.inp} placeholder='maryam@gmail.com' keyboardType="email-address"></TextInput>
       <TextInput style={styles.inp2} secureTextEntry={true} />
-      <TouchableOpacity  style={styles.loginButton}>
+      <TouchableOpacity  style={styles.loginButton}
+onPress={()=>{navigation.navigate('Log In'}}>
       <Text style={styles.buttonText}> Sign UP</Text>
       </TouchableOpacity>
        <Text style={styles.forgotText}>
