@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, StyleSheet,TouchableOpacity,Image } from 'react-native';
 import Constants from 'expo-constants';
 
-const Home=()=> {
+const Home=({navigation})=> {
   return (
     <View style={styles.container}>
        <View style={{ flex: 1.5, paddingLeft: 30, paddingTop: 20 }}>
@@ -13,10 +13,14 @@ const Home=()=> {
         <Text style={styles.greyText}>
           Best Place to write life stories and share your journey experience
         </Text>
-        <TouchableOpacity  style={styles.loginButton}>
+        <TouchableOpacity  style={styles.loginButton}
+         onPress={()=>navigation.navigate('Log In')}
+                       >
           <Text style={styles.buttonText}> Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.signUpButton}>
+        <TouchableOpacity style={styles.signUpButton}
+
+          onPress={()=>navigation.navigate('Sign UP')}>
           <Text style={styles.signupText}> SignUP</Text>
         </TouchableOpacity>
       </View>
