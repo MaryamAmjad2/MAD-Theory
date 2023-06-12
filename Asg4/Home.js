@@ -5,9 +5,7 @@ import Constants from 'expo-constants';
 const Home=({navigation})=> {
   return (
     <View style={styles.container}>
-       <View style={{ flex: 1.5, paddingLeft: 30, paddingTop: 20 }}>
-        
-      </View>
+
       <View style={{ flex: 2, marginTop: 50 }}>
         <Text style={styles.paragraph}>Hello !</Text>
         <Text style={styles.greyText}>
