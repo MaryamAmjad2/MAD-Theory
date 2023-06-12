@@ -22,9 +22,8 @@ const[pro,setpro]=useState()
 
 storeData=async()=>{
   try{
-    await AsyncStorage.setItem('usrName',name)
-    await AsyncStorage.setItem('usrEmail',email)
-    await AsyncStorage.setItem('usrPass',pass)
+    await AsyncStorage.setItem(email,pass)
+
     setpro('good')
     
   }
