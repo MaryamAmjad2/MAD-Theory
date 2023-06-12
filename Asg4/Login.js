@@ -5,28 +5,28 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import{useState} from 'react'
 
 import { AsyncStorage } from 'react-native';
-const LogIn=()=> {
+const LogIn=({navigation})=> {
 
 const[email,setEmail]=useState()
 const[pass,setPass]=useState()
 
 getData=async()=>{
-  try{
-   const em= await AsyncStorage.getItem('usrEmail')
-   const pa=await AsyncStorage.getItem('usrPass')
+   const password= await AsyncStorage.getItem(email)
+   const pa=await AsyncStorage.getItem('usrPass3')
+   if(password ){
+     if( password===pass){
+       navigation.navigate("Profile")
+     }
+     else{
+       alert("Invalid Password")
+     }
+
+   }
+   else{
+     alert("No Such Account")
+   }
 
 
-  }
-  catch{
-    alert('No Data Found')
-  }
-
-  if(em==email & pa==pass){
-navigation.navigate('Profile')
-  }
-  else{
-    alert('Failed')
-  }
 }
 
 
@@ -56,7 +56,7 @@ navigation.navigate('Profile')
 
 
       <TouchableOpacity  style={styles.loginButton}
-      onPress={getData()}
+      onPress={getData}
       
       >
       <Text style={styles.buttonText}> Login</Text>
