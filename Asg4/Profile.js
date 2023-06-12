@@ -5,32 +5,11 @@ import Constants from 'expo-constants';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Profile = ({ navigation, route }) => {
-  const { Name, Email, Password } = route.params;
+const Profile = ({ navigation }) => {
+  
   return (
     <View style={styles.container}>
-    <View  >
-      < Image
-        source={require('./person.png')}
-        style={{ width: 200, height: 200, borderRadius: 400 / 2 ,marginHorizontal:60,margin:40}}
-      />
-      </View>
-      <TouchableOpacity style={styles.butn2}>
-        <Text style={styles.appButtonText}>Name : {JSON.stringify(Name)}</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.butn2}>
-        <Text style={styles.appButtonText}>
-          {' '}
-          Your Email : {JSON.stringify(Email)}
-        </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.butn2}>
-        <Text style={styles.appButtonText}>
-          Your Password : {JSON.stringify(Password)}
-        </Text>
-      </TouchableOpacity>
+<Text style={styles.paragraph}>Log IN SuccessFull</Text>
     </View>
   );
 };
@@ -46,20 +25,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     padding: 8,
   },
-
-  butn2: {
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    marginTop: 10,
-    borderWidth: 1,
-    borderColor: 'black',
-    height: 60,
-  },
-  appButtonText: {
-    margin: 0,
-    fontSize: 12,
+    paragraph: {
+    margin: 24,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: 'black',
+    textAlign: 'center',
   },
+
 });
